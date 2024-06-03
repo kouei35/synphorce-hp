@@ -1,6 +1,7 @@
 import Header from '../Header'
 import React from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import Footer from '../Footer'
 
 export default function Home() {
   return (
@@ -115,7 +116,7 @@ export default function Home() {
             </Card>
         </div>
     </div>
-
+    <Footer />
     </div>
   )
 }

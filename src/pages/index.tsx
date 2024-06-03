@@ -1,21 +1,19 @@
 import Header from './Header'
 import Head from 'next/head'
+import Image from 'next/image'
+import Footer from './Footer'
 
 export default function Home() {
   return (
-    <>
-    <Head>
-      <title>Synphorce</title>
-      <meta name="description" content="synphorce公式サイト" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    
+    <>    
     <Header/>
-    <h1 className="text-3xl font-bold text-black">Hello Next.js</h1>
-    <p>
-        ここは、かっこよくしていくぜ！
-        トップページだからな！
-    </p>
+    <Image src="/toppage/top.png" alt="hero" width={300} height={300}  
+          className="w-full mt-0"/>
+
+    <Image src="/toppage/Group54.png" alt="hero" width={300} height={300}  
+          className="w-full m-0"/>
+
+    <Footer />
     </>
   )
 }

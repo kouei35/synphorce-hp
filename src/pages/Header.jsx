@@ -1,19 +1,32 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function Header() {
     return (
-        <header class="bg-white h-16 border-gray-800 border-b-2">
-
-            <div class="h-8">
+        <>
+        <Head>
+        <title>Synphorce</title>
+        <meta name="description" content="synphorce公式サイト" />
+        <link rel="icon" href="favicon.ico" />
+        </Head>
+        
+        <header class="bg-white border-gray-800 border-b-2 h-16">
+        
+        <div class="grid grid-cols-3 h-full">
+            <div></div>
+            <div class="flex justify-center items-center h-full">
                 <Image
                         src="/vercel.svg"
                         alt="TryWorth"
                         width={160}
                         height={40}
-                        class="flex justify-center h-full w-full"
+                        class="flex justify-center"
+                        
                 />
-                <ul class="h-8 flex justify-end h-full gap-10 m-1 list-none">
+            </div>
+            <div class="h-full">
+                <ul class=" flex justify-end h-full gap-10 p-1 list-none items-center">
                     <li>
                         <Link href="/" class="text-black hover:text-gray-500">ホーム</Link>
                     </li>
@@ -25,7 +38,8 @@ export default function Header() {
                     </li>
                 </ul>
             </div>
-
+        </div>
         </header>
+        </>
     );
 }
