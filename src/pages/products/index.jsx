@@ -89,7 +89,7 @@ export default function Home() {
 
     <h2 class="text-2xl m-2">ゲーム開発</h2>
 
-    <div class="grid grid-cols-3 gap-7 m-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3gap-7 m-4">
 
         <div>
             <Card className= "py-2 w-128 m-2">
