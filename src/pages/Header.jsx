@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header() {
     return (
@@ -14,19 +15,13 @@ export default function Header() {
                 />
                 <ul class="h-8 flex justify-end h-full gap-10 m-1">
                     <li>
-                        <a href="/" class="text-black hover:text-gray-500">    
-                            ホーム
-                        </a>
+                        <Link href="/" class="text-black hover:text-gray-500">ホーム</Link>
                     </li>
                     <li>
-                        <a href="/products" class="text-black hover:text-gray-500">    
-                            製品
-                        </a>
+                        <Link href="/products" class="text-black hover:text-gray-500">製品</Link>
                     </li>
                     <li>
-                        <a href="/about" class="text-black hover:text-gray-500">    
-                            企業理念
-                        </a>
+                        <Link href="/about" class="text-black hover:text-gray-500">企業理念</Link>
                     </li>
                 </ul>
             </div>
