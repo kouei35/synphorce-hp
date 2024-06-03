@@ -13,7 +13,7 @@ export default function Header() {
                         height={40}
                         class="flex justify-center h-full w-full"
                 />
-                <ul class="h-8 flex justify-end h-full gap-10 m-1">
+                <ul class="h-8 flex justify-end h-full gap-10 m-1 list-none">
                     <li>
                         <Link href="/" class="text-black hover:text-gray-500">ホーム</Link>
                     </li>
