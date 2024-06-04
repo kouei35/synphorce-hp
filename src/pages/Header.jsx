@@ -21,8 +21,8 @@ export default function Header(props) {
                     <Image
                             src="/vercel.svg"
                             alt="TryWorth"
-                            width={160}
-                            height={40}
+                            width={90}
+                            height={20}
                             class="flex justify-center"
                     />
             </Link>
@@ -38,8 +38,8 @@ export default function Header(props) {
                     <Image
                             src="/vercel.svg"
                             alt="TryWorth"
-                            width={160}
-                            height={40}
+                            width={90}
+                            height={20}
                     />
             </Link>
         </NavbarBrand>
