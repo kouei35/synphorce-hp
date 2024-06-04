@@ -2,7 +2,6 @@ import Header from '../Header'
 import React from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 import Footer from '../Footer'
-import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Home() {
   return (

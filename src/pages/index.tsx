@@ -1,5 +1,4 @@
 import Header from './Header'
-import Head from 'next/head'
 import Image from 'next/image'
 import Footer from './Footer'
 
