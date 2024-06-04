@@ -2,11 +2,13 @@ import Header from '../Header'
 import React from "react";
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 import Footer from '../Footer'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Home() {
   return (
-    <div>
+    <>
     <Header />
+
     <h1 class="text-3xl font-bold m-2">製品一覧</h1>
 
     <h2 class="text-2xl m-2">Web開発</h2>
@@ -117,6 +119,6 @@ export default function Home() {
         </div>
     </div>
     <Footer />
-    </div>
+    </>
   )
 }

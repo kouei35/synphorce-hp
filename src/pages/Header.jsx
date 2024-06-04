@@ -1,45 +1,82 @@
+import React from "react";
+import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
 import Image from 'next/image'
-import Link from 'next/link'
-import Head from 'next/head'
 
-export default function Header() {
-    return (
-        <>
-        <Head>
-        <title>Synphorce</title>
-        <meta name="description" content="synphorce公式サイト" />
-        <link rel="icon" href="favicon.ico" />
-        </Head>
-        
-        <header class="bg-white border-gray-800 border-b-2 h-16">
-        
-        <div class="grid grid-cols-3 h-full">
-            <div></div>
-            <div class="flex justify-center items-center h-full">
-                <Image
-                        src="/vercel.svg"
-                        alt="TryWorth"
-                        width={160}
-                        height={40}
-                        class="flex justify-center"
-                        
-                />
-            </div>
-            <div class="h-full">
-                <ul class=" flex justify-end h-full gap-10 p-1 list-none items-center">
-                    <li>
-                        <Link href="/" class="text-black hover:text-gray-500">ホーム</Link>
-                    </li>
-                    <li>
-                        <Link href="/products" class="text-black hover:text-gray-500">製品</Link>
-                    </li>
-                    <li>
-                        <Link href="/about" class="text-black hover:text-gray-500">企業理念</Link>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        </header>
-        </>
-    );
+export default function Header(props) {
+  const menuItems = [
+    'Home',
+    'Products',
+    'About'
+  ];
+
+  return (
+    <Navbar disableAnimation isBordered>
+      <NavbarContent className="sm:hidden" justify="start">
+        <NavbarMenuToggle />
+      </NavbarContent>
+
+      <NavbarContent className="sm:hidden " justify="center">
+        <NavbarBrand>
+            <Link href="/">
+                    <Image
+                            src="/vercel.svg"
+                            alt="TryWorth"
+                            width={160}
+                            height={40}
+                            class="flex justify-center"
+                    />
+            </Link>
+        </NavbarBrand>
+      </NavbarContent>
+      
+      <NavbarContent className="sm:hidden" justify="end">
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex gap-4" justify="start">
+        <NavbarBrand>
+            <Link href="/">
+                    <Image
+                            src="/vercel.svg"
+                            alt="TryWorth"
+                            width={160}
+                            height={40}
+                    />
+            </Link>
+        </NavbarBrand>
+        <NavbarItem>
+          <Link color="foreground" href="/">
+            ホーム
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link href="/products" color="foreground">
+            製品
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/about">
+            企業理念
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+
+      <NavbarMenu>
+        <NavbarMenuItem>
+            <Link color="foreground" href="/">
+                ホーム
+            </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+            <Link color="forceground" href="/products">
+                製品
+            </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+            <Link color="foreground" href="/about">
+                企業理念
+            </Link>
+        </NavbarMenuItem>
+      </NavbarMenu>
+    </Navbar>
+  );
 }
