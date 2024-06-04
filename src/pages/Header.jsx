@@ -67,7 +67,7 @@ export default function Header(props) {
             </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-            <Link color="forceground" href="/products">
+            <Link color="foreground" href="/products">
                 製品
             </Link>
         </NavbarMenuItem>

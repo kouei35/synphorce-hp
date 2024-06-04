@@ -6,7 +6,7 @@ export default function Header() {
         <footer class="bg-white border-gray-800 border-t-2">
 
             <div class="grid grid-cols-3">
-                <div>
+                <div className="hidden lg:flex md:flex">
                     <ul class="gap-10 px-12 py-2 list-none">
                         <li>
                             <Link href="/" class="text-black hover:text-gray-500">ホーム</Link>
@@ -20,6 +20,8 @@ export default function Header() {
                     </ul>
                 </div>
 
+                <div class="sm:flex md:hidden lg:hidden">
+                </div>
 
                 <div class="flex items-center justify-center">
                     <Image
