@@ -5,35 +5,27 @@ import Image  from 'next/image'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
-const OPTIONS = { loop: true }
-const SLIDE_COUNT = 5
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+import ClassNames from 'embla-carousel-class-names'
 
+const options = {
+  draggable: 'is-draggable',
+  dragging: 'is-dragging',
+  snapped: 'is-snapped',
+  inView: 'is-in-view'
+};
+import EmblaCarousel from './EmblaCarousel/EmblaCarousel'
 export default function Home() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({stopOnInteraction:false}) ,ClassNames(options)]);
+  const OPTIONS = { loop: true }
+
   return (
     <>
     <Header/>
     
-    <div className="embla overflow-hidden px-20" ref={emblaRef}>
-      <div className="embla__container flex">
-        <div className="embla__slide flex-[0_0_80%] min-w-0">
-          <Image src="/card/virtual_try_on.png" alt="toppage" width={1000} height={300}
-            className="w-full h-full" />
-        </div>
-        <div className="embla__slide flex-[0_0_80%] min-w-0">
-          <Image src="/card/orisige.png" alt="toppage" width={1000} height={300}
-            className="w-full h-full" />
-        </div>
-        <div className="embla__slide flex-[0_0_80%] min-w-0">
-          <Image src="/card/tryworthAcademy.png" alt="toppage" width={1000} height={300}
-            className="w-full h-full" />
-        </div>
+    
+    <EmblaCarousel options={OPTIONS} />
 
-      </div>
-    </div>
-
-    <div className="max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8 py-4">
+    {/* <div className="max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8 py-4">
     <Card className="col-span-12 sm:col-span-4 h-[300px]">
       <CardHeader className="absolute z-10 top-1 flex-col !items-start">
         <p className="text-tiny text-white/60 uppercase font-bold">What to watch</p>
@@ -117,7 +109,7 @@ export default function Home() {
         <Button radius="full" size="sm">Get App</Button>
       </CardFooter>
     </Card>
-  </div>
+  </div> */}
 
 
   <Footer/>
