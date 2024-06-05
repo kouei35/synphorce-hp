@@ -2,7 +2,6 @@ import Header from './Header'
 import Footer from './Footer'
 import {Card, CardHeader, CardBody, Image as CardImage, CardFooter, Button} from "@nextui-org/react";
 import Image  from 'next/image'
-import EmblaCarousel from './EmblaCarousel/EmblaCarousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
