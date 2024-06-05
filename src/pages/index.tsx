@@ -2,19 +2,36 @@ import Header from './Header'
 import Footer from './Footer'
 import {Card, CardHeader, CardBody, Image as CardImage, CardFooter, Button} from "@nextui-org/react";
 import Image  from 'next/image'
+import EmblaCarousel from './EmblaCarousel/EmblaCarousel'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
+
+const OPTIONS = { loop: true }
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 export default function Home() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   return (
     <>
     <Header/>
+    
+    <div className="embla overflow-hidden px-20" ref={emblaRef}>
+      <div className="embla__container flex">
+        <div className="embla__slide flex-[0_0_80%] min-w-0">
+          <Image src="/card/virtual_try_on.png" alt="toppage" width={1000} height={300}
+            className="w-full h-full" />
+        </div>
+        <div className="embla__slide flex-[0_0_80%] min-w-0">
+          <Image src="/card/orisige.png" alt="toppage" width={1000} height={300}
+            className="w-full h-full" />
+        </div>
+        <div className="embla__slide flex-[0_0_80%] min-w-0">
+          <Image src="/card/tryworthAcademy.png" alt="toppage" width={1000} height={300}
+            className="w-full h-full" />
+        </div>
 
-    <div className="relative">
-    <Image src="/toppage/Group54.png" alt="toppage" width={1000} height={300}  
-          className="w-full h-full"/>
-
-    <h1 className="absolute bottom-20 left-10 sm:bottom-30 sm:left-20 md:bottom-50 text-3xl md:text-5xl bold bg-slate-400">
-      よしおくんのおすすめ
-    </h1>
+      </div>
     </div>
 
     <div className="max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8 py-4">
