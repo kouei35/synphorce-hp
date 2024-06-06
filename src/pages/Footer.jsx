@@ -17,6 +17,9 @@ export default function Header() {
                         <li>
                             <Link href="/about" class="text-black hover:text-gray-500">企業理念</Link>
                         </li>
+                        <li>
+                            <Link href="/inquiry" class="text-black hover:text-gray-500">お問い合わせ</Link>
+                        </li>
                     </ul>
                 </div>
 

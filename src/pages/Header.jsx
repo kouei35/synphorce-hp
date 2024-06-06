@@ -58,6 +58,11 @@ export default function Header(props) {
             企業理念
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/inquiry">
+            お問い合わせ
+          </Link>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
@@ -76,6 +81,11 @@ export default function Header(props) {
                 企業理念
             </Link>
         </NavbarMenuItem>
+        <NavbarItem>
+          <Link color="foreground" href="/inquiry">
+            お問い合わせ
+          </Link>
+        </NavbarItem>
       </NavbarMenu>
     </Navbar>
   );
