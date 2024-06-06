@@ -12,7 +12,7 @@ export default function Home() {
     <Header/>
     <h1 className="px-3 pt-10 pb-2 m-0 text-center md:text-xl text-lg">お問い合わせフォーム</h1>
     <div className="flex justify-center pb-10">
-      <div className="bg-gray-200 w-full max-w-2xl rounded-xl m-0 p-5 w-[350px] sm:w-[400px]">
+      <div className="bg-gray-200 w-full max-w-2xl rounded-xl m-0 p-5 w-[300px] sm:w-[400px]">
           {/* お名前 */}
           <div className="w-full px-2 mx-auto py-5">
               <h2>お名前</h2>
