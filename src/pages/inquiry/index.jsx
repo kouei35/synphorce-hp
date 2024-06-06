@@ -2,7 +2,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 import {Textarea} from "@nextui-org/react";
 import {Input} from "@nextui-org/react";
-import {MailIcon} from './MailIcon';
+import {MailIcon} from '../../components/MailIcon';
 import {Button} from "@nextui-org/react";
 
 export default function Home() {
