@@ -4,7 +4,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import styles from './Embla.module.css'
 import Image from 'next/image'
 
-const TWEEN_FACTOR_BASE = 0.5
+const TWEEN_FACTOR_BASE = 0.4
 
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max)
@@ -22,6 +22,8 @@ const EmblaCarousel = (options) => {
     const scrollProgress = emblaApi.scrollProgress()
     const slidesInView = emblaApi.slidesInView()
     const isScrollEvent = eventName === 'scroll'
+    console.log('ScrollSnapList:', emblaApi.scrollSnapList());
+    console.log('ScrollProgress:', scrollProgress);
 
     emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
       let diffToTarget = scrollSnap - scrollProgress
@@ -67,8 +69,8 @@ const EmblaCarousel = (options) => {
   }, [emblaApi, tweenOpacity])
 
   return (
-    <div className={`${styles.embla} overflow-hidden px-4 py-2 `} ref={emblaRef}>
-      <div className={`${styles.embla__container} flex`}>
+    <div className={`${styles.embla} lg:px-2 overflow-hidden`} ref={emblaRef}>
+      <div className={`${styles.embla__container} flex px-2 py-2 w-full md:w-10/12`}>
         <div className={`${styles.embla__slide} embla__class-names`}>
           <Image src="/card/virtual_try_on.png" alt="toppage" width={1000} height={300}
             className={`${styles.embla__slide__img}`} />
