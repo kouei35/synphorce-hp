@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import { Textarea } from "@nextui-org/react";
-import { Input } from "@nextui-org/react";
+import { useState, useEffect } from 'react';
+import { Textarea, Input } from "@nextui-org/react";
 import { MailIcon } from '../../components/MailIcon';
 import Confirmation from "./Confirmation";
 
@@ -12,6 +11,14 @@ export default function InquiryForm() {
         message: ''
     });
 
+    const [isFormValid, setIsFormValid] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    useEffect(() => {
+        const { firstName, lastName, email, message } = formData;
+        setIsFormValid(firstName && lastName && email && message);
+    }, [formData]);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -20,29 +27,39 @@ export default function InquiryForm() {
         }));
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
+        setIsSubmitting(true);
 
         try {
+            const bodyData = {
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                email: formData.email,
+                message: formData.message
+            };
+
             const response = await fetch('https://966t2oou0h.execute-api.ap-northeast-1.amazonaws.com/default/userregistFunction', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'text/plain',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(bodyData),
             });
 
             if (!response.ok) {
+                const errorDetails = await response.text();
+                alert(`送信に失敗しました: ${errorDetails}`);
                 throw new Error('Network response was not ok');
             }
 
             const result = await response.json();
             console.log('Success:', result);
-            // 成功した場合の処理をここに追加
+            alert('送信しました。');
         } catch (error) {
-            alert('エラーが発生しました。');
-            // エラーハンドリングをここに追加
+            console.error('Error:', error);
+            alert(`Error: ${error.message}`);
         } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -102,7 +119,7 @@ export default function InquiryForm() {
                         />
                     </div>
                     <div className="flex justify-end w-full">
-                        <Confirmation formData={formData} handleSubmit={handleSubmit}/>
+                        <Confirmation formData={formData} handleSubmit={handleSubmit} isDisabled={!isFormValid || isSubmitting} />
                     </div>
                 </div>
             </div>

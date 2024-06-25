@@ -23,7 +23,7 @@ export default function Header(props) {
                             alt="TryWorth"
                             width={90}
                             height={20}
-                            class="flex justify-center"
+                            className="flex justify-center"
                     />
             </Link>
         </NavbarBrand>

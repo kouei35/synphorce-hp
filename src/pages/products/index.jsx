@@ -8,10 +8,10 @@ export default function Home() {
     <>
     <Header />
 
-    <h1 class="text-3xl font-bold m-2">製品一覧</h1>
+    <h1 className="text-3xl font-bold m-2">製品一覧</h1>
 
-    <h2 class="text-2xl m-2">Web開発</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-70 m-4">
+    <h2 className="text-2xl m-2">Web開発</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-70 m-4">
         <div>
             <Card className= "py-2 w-128 m-2">
             <CardHeader className="py-0 px-4 flex-col items-start">
@@ -93,9 +93,9 @@ export default function Home() {
         </div>
     </div>
 
-    <h2 class="text-2xl m-2">ゲーム開発</h2>
+    <h2 className="text-2xl m-2">ゲーム開発</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 m-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 m-4">
 
         <div>
             <Card className= "py-2 w-128 m-2">

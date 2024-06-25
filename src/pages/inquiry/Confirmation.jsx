@@ -1,12 +1,12 @@
 import React from "react";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 
-export default function Confirmation({ formData , handleSubmit}) {
+export default function Confirmation({ formData, handleSubmit, isDisabled }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <>
-      <Button color="primary" onPress={onOpen}>確認</Button>
+      <Button color="primary" onPress={onOpen} isDisabled={isDisabled}>確認</Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
@@ -23,7 +23,7 @@ export default function Confirmation({ formData , handleSubmit}) {
                 <Button color="danger" variant="light" onPress={onClose}>
                   閉じる
                 </Button>
-                <Button color="primary" onPress={onClose} onClick={handleSubmit}>
+                <Button color="primary" onPress={() => { handleSubmit(); onClose(); }}>
                   送信
                 </Button>
               </ModalFooter>
